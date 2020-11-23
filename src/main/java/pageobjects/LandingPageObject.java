@@ -9,12 +9,7 @@ public class LandingPageObject {
 
     WebDriver driver;
 
-    @FindBy(className = "navbar-brand") public WebElement brandName;
-    @FindBy(name = "name") public WebElement taskNameTextBox;
-    @FindBy(name = "deadline") public WebElement deadlineTextBox;
-    @FindBy(name = "complete") public WebElement completeCheckbox;
-    @FindBy(id = "add-item") public WebElement addItemButton;
-    @FindBy(className = "todo-content") public WebElement taskListHeader;
+    @FindBy(className = "login") public WebElement loginButton;
 
     // Constructor to pass teh driver and initialize all the webelements in the page object
     public LandingPageObject(WebDriver driver) {
@@ -26,24 +21,7 @@ public class LandingPageObject {
         return driver.getTitle();
     }
 
-    public void enterTaskName(String TaskName) {
-        this.taskNameTextBox.clear();
-        this.taskNameTextBox.sendKeys(TaskName);
-    }
-
-    public void enterDeadline(String deadlineDate) {
-        this.deadlineTextBox.clear();
-        this.deadlineTextBox.sendKeys(deadlineDate);
-        this.taskListHeader.click();
-    }
-
-    public void selectComplete(Boolean check) {
-        if (check) {
-            if (!this.completeCheckbox.isSelected()) this.completeCheckbox.click();
-        } else {
-            if (this.completeCheckbox.isSelected()) this.completeCheckbox.click();
-        }
-    }
-
-    public void addTask() {this.addItemButton.click(); }
+    public void navigateToLoginPage(){
+    loginButton.click();
+}
 }

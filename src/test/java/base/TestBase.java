@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import utils.ExcelReader;
-import utils.WebEventListener;
+import listeners.WebEventListener;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -26,8 +26,8 @@ public class TestBase {
 
     //Initializing the drivers executable paths
     private String userDir = System.getProperty("user.dir");
-    private String chromeDriverPath = userDir + "\\src\\main\\resources\\executables\\chromedriver.exe";
-    private String geckoDriverPath = userDir + "\\src\\main\\resources\\executables\\geckodriver.exe";
+    private String chromeDriverPath = userDir + "\\src\\main\\resources\\driverexecutables\\chromedriver.exe";
+    private String geckoDriverPath = userDir + "\\src\\main\\resources\\driverexecutables\\geckodriver.exe";
 
     public static ExcelReader excel = new ExcelReader(System.getProperty("user.dir") + "\\src\\main\\resources\\excelsheets\\testData.xlsx");
     public WebDriverWait wait;

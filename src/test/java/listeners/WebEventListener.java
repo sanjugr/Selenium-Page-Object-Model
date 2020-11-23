@@ -1,11 +1,11 @@
-package utils;
+package listeners;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverEventListener;
-
+import utils.*;
 import java.io.IOException;
 
 /*************************************** PURPOSE **********************************
@@ -29,8 +29,7 @@ public class WebEventListener implements WebDriverEventListener {
         System.out.println("Value of the:" + element.toString() + " before any changes made");
     }
 
-    public void afterChangeValueOf(WebElement element, WebDriver driver) {
-        System.out.println("Element value changed to: " + element.toString());
+    public void afterChangeValueOf(WebElement element, WebDriver driver) { System.out.println("Element value changed to: " + element.toString());
     }
 
     public void beforeClickOn(WebElement element, WebDriver driver) {
@@ -60,7 +59,7 @@ public class WebEventListener implements WebDriverEventListener {
     public void onException(Throwable error, WebDriver driver) {
         System.out.println("Exception occured: " + error);
         try {
-            TestUtils.takeScreenshot(driver);
+            TestUtil.takeErrorScreenshot(driver);
         } catch (IOException e) {
             e.printStackTrace();
         }

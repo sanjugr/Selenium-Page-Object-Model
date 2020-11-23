@@ -3,7 +3,7 @@
 <suite name="Testing ">
     <test name="Regression">
         <classes>
-            <class name="standAlonetestcases.GoogleSearchTest"/>
+            <class name="testcases.standalonetestcases.GoogleSearchTest"/>
 
         </classes>
     </test> <!-- Test -->
